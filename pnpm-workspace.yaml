@@ -1,0 +1,23 @@
+# Workspace layout (SPEC D3). Directories are created in later phases.
+packages:
+  - apps/*
+  - packages/*
+
+# --- Supply chain hardening (SPEC B-7) ---
+# pnpm >= 11 reads these settings only from this file (.npmrc = auth/registry only).
+
+# Refuse package versions published less than 7 days ago (value in minutes).
+minimumReleaseAge: 10080
+# Save exact versions, no ^/~ ranges.
+saveExact: true
+# Install scripts (preinstall/install/postinstall) are blocked by default.
+# Every entry set to `true` here must be justified in the PR description.
+allowBuilds: {}
+# Fail the install when a dependency has an unreviewed install script.
+strictDepBuilds: true
+# Only direct dependencies may come from git/tarball URLs.
+blockExoticSubdeps: true
+# Fail when a package version has weaker trust evidence (provenance) than older ones.
+trustPolicy: no-downgrade
+# Enforce `engines` (Node / pnpm versions).
+engineStrict: true

@@ -8,3 +8,9 @@ CLAUDE.md
 
 #Environment
 .env
+
+#Node / tooling
+node_modules/
+coverage/
+dist/
+*.tsbuildinfo

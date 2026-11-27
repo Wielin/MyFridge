@@ -1,0 +1,3 @@
+# Prettier also honours .gitignore (docs/SPEC.md, docs/PLAN.md, ... stay untouched).
+pnpm-lock.yaml
+dokumenty/
